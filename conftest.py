@@ -3,7 +3,6 @@ import requests
 
 from selenium import webdriver
 from helper import DataForCreateUser as DFCU
-from data import Ingredients
 from urls_for_tests import UrlsForTests as UFT, Endpoints as End
 from page_objects.main_page import MainPage
 from page_objects.auth_page import AuthPage
@@ -38,9 +37,3 @@ def login_in_system(driver, create_user):
     main_page.click_personal_account_button_in_header()
     auth_page.authorization_on_the_website(user['email'], user['password'])
     main_page.wait_main_page()
-
-# @pytest.fixture()
-# def create_order(create_user):
-#     token = create_user[1].json()['accessToken']
-#     response = requests.post(End.CREATE_ORDER, headers= {'Authorization': token}, data= Ingredients.INGREDIENTS)
-#     return response.json()['order']['number']

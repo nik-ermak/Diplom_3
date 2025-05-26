@@ -1,6 +1,6 @@
 import allure
 
-from conftest import driver, create_user, login_in_system
+from conftest import driver
 from page_objects.recovery_password_page import RecoveryPasswordPage as RPP
 from helper import DataForCreateUser as DFCU
 from page_objects.main_page import MainPage as MP

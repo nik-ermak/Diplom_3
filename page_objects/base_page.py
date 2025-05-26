@@ -22,7 +22,7 @@ class BasePage:
     def get_current_url(self):
         return self.driver.current_url
 
-    @allure.title('Получить текст одного элемента')
+    @allure.step('Получить текст одного элемента')
     def get_text_of_element(self, locator, timeout= 10):
         WebDriverWait(self.driver, timeout).until(expected_conditions.visibility_of_all_elements_located(locator))
         return self.driver.find_element(*locator).text
